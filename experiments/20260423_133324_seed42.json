@@ -1,0 +1,92 @@
+{
+  "run_id": "20260423_133324_seed42",
+  "training_date": "2026-04-23T13:33:27.596154+00:00",
+  "git_commit_sha": "unknown",
+  "dataset_path": "C:\\Python Engineering Projects\\mechatronics-career-architect\\data\\training\\dataset.csv",
+  "dataset_version": "da8633f09af452bef50d8cf4d457c5180081b455ebae7b5d8d5cdb24c4a1e277",
+  "dataset_size": 2400,
+  "records_per_niche": {
+    "embedded_systems": 400,
+    "automotive": 400,
+    "mechanical_design": 400,
+    "robotics": 400,
+    "industrial_automation": 400,
+    "technical_management": 400
+  },
+  "algorithm": "RandomForestClassifier",
+  "hyperparameters": {
+    "n_estimators": 200,
+    "max_depth": null,
+    "min_samples_leaf": 2,
+    "class_weight": "balanced"
+  },
+  "random_seed": 42,
+  "train_test_split": 0.8,
+  "evaluation_metrics": {
+    "overall_accuracy": 0.85625,
+    "per_niche": {
+      "automotive": {
+        "precision": 0.9090909090909091,
+        "recall": 0.875,
+        "f1": 0.89171974522293,
+        "support": 80
+      },
+      "embedded_systems": {
+        "precision": 0.9459459459459459,
+        "recall": 0.875,
+        "f1": 0.9090909090909091,
+        "support": 80
+      },
+      "industrial_automation": {
+        "precision": 0.8676470588235294,
+        "recall": 0.7375,
+        "f1": 0.7972972972972973,
+        "support": 80
+      },
+      "mechanical_design": {
+        "precision": 1.0,
+        "recall": 0.8375,
+        "f1": 0.9115646258503401,
+        "support": 80
+      },
+      "robotics": {
+        "precision": 0.9166666666666666,
+        "recall": 0.825,
+        "f1": 0.868421052631579,
+        "support": 80
+      },
+      "technical_management": {
+        "precision": 0.6475409836065574,
+        "recall": 0.9875,
+        "f1": 0.7821782178217822,
+        "support": 80
+      }
+    }
+  },
+  "bias_fairness_note": "Per-niche F1 scores above \u2014 minimum F1 across niches: 0.782 (technical_management). All niches meet the 0.60 F1 minimum.",
+  "feature_importance": {
+    "robotic_framework_skills": 0.09709887280696014,
+    "robotic_framework_projects": 0.08075002493860516,
+    "microcontroller_skills": 0.07678426139958226,
+    "microcontroller_projects": 0.06470717644751707,
+    "mechanical_tool_projects": 0.06186654984964202,
+    "automotive_standard_skills": 0.05846819846820059,
+    "automotive_standard_projects": 0.05713271280920612,
+    "plc_hardware_skills": 0.055097652975136184,
+    "plc_hardware_projects": 0.053913221718207616,
+    "cad_software_projects": 0.050785524516960744,
+    "mechanical_tool_skills": 0.047353394253237195,
+    "management_methodology_skills": 0.046796185787845265,
+    "cad_software_skills": 0.04303972173801285,
+    "simulation_tool_skills": 0.03517692660806343,
+    "management_methodology_projects": 0.03420393208060333,
+    "communication_protocol_skills": 0.03343770006533865,
+    "simulation_tool_projects": 0.03185621265850781,
+    "communication_protocol_projects": 0.029624516025949673,
+    "programming_language_projects": 0.02149583760442214,
+    "programming_language_skills": 0.020411377248001846
+  },
+  "model_artifact_path": "C:\\Python Engineering Projects\\mechatronics-career-architect\\models\\20260423_133324_seed42.joblib",
+  "schema_version": "23eb95ba",
+  "status": "accepted"
+}

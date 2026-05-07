@@ -1,0 +1,52 @@
+# training_config.yaml — Default Training Configuration for Phase 3
+#
+# This file controls every aspect of a training run. All values here are the
+# defaults; you can override them via CLI flags or a custom config copy.
+#
+# The six canonical niche labels the model predicts are:
+#   industrial_automation | robotics | embedded_systems
+#   automotive | mechanical_design | technical_management
+#
+# Minimum recommended: 50 records per niche (300 total).
+# The trainer will warn but still train below this threshold.
+
+# Path to the labeled feature vector dataset.
+# CSV format: columns feat_0..feat_39 + niche
+# JSON format: list of {"feature_vector": [...], "niche": "..."}
+dataset_path: data/training/dataset.csv
+
+# Fixed random seed — every training run with the same seed on the same data
+# produces an identical model artifact. Change this only when you want to
+# explore the effect of initialization variance.
+random_seed: 42
+
+# Fraction of records used for TRAINING. The remaining (1 - split) fraction
+# is held out as the test set for evaluation. Default 0.8 means 80% train,
+# 20% test — a standard split for this dataset size.
+train_test_split: 0.8
+
+# Number of decision trees in the Random Forest ensemble. More trees = more
+# stable predictions but slower training. 200 is a good balance for ~600 records.
+n_estimators: 200
+
+# Maximum depth of each tree. null means trees grow until all leaves are pure
+# or contain fewer than min_samples_leaf records. We rely on min_samples_leaf
+# for regularization rather than a hard depth cap.
+max_depth: null
+
+# Minimum number of training samples required to be at a leaf node. Setting
+# this to 2 (rather than 1) prevents single-sample leaves that overfit noise.
+min_samples_leaf: 2
+
+# Class weighting strategy. "balanced" makes the model weight minority classes
+# higher, which is important when some niches have fewer training records than
+# others. Use "uniform" only if you have verified balanced classes.
+class_weight: balanced
+
+# Directory where model artifacts (.joblib files) are written after successful
+# training. Created automatically if it does not exist.
+model_output_dir: models/
+
+# Directory where training records (JSON files, one per run) are written.
+# Both accepted and rejected runs produce a record here.
+experiment_dir: experiments/

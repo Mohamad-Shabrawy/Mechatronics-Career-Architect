@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: mechatronics-career-architect
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python run.py
+    plan: free
+    envVars:
+      - key: MODEL_PATH
+        value: models/20260423_155216_seed42.joblib

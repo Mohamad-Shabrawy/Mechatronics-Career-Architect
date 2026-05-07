@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mechatronics Career Architect — AI-powered career niche analysis for engineering students">
+  <title>Mechatronics Career Architect</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css?v=11">
+</head>
+<body>
+
+  <!-- Ambient gradient orbs — never above z-index 0 -->
+  <div class="bg-ambient" aria-hidden="true">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
+    <div class="bg-orb bg-orb--4"></div>
+  </div>
+
+  <!-- ── Upload Form Page ──────────────────────────────────────────── -->
+  <main id="form-page" class="page-section" aria-labelledby="form-heading">
+    <div class="form-layout">
+
+      <!-- Left: Branding / Hero -->
+      <aside class="hero-panel">
+        <div class="hero-panel__content">
+
+          <!-- Animated SVG logo mark -->
+          <div class="hero-logo">
+            <svg viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg"
+                 width="96" height="96" aria-hidden="true">
+              <circle class="lring lring--outer" cx="60" cy="60" r="54" stroke-width="1"/>
+              <circle class="lring lring--mid"   cx="60" cy="60" r="38" stroke-width="1" stroke-dasharray="6 3"/>
+              <circle class="lring lring--inner"  cx="60" cy="60" r="22" stroke-width="1.5"/>
+              <!-- Cross hairs -->
+              <line x1="60" y1="2"  x2="60" y2="18"  stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="60" y1="102" x2="60" y2="118" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="2"  y1="60" x2="18"  y2="60"  stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="102" y1="60" x2="118" y2="60" stroke-width="1.5" stroke-linecap="round"/>
+              <!-- Diagonal marks -->
+              <line x1="36" y1="36" x2="47" y2="47" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+              <line x1="73" y1="73" x2="84" y2="84" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+              <line x1="84" y1="36" x2="73" y2="47" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+              <line x1="47" y1="73" x2="36" y2="84" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+              <!-- Center dot -->
+              <circle cx="60" cy="60" r="5" fill="currentColor"/>
+              <!-- Cardinal dots -->
+              <circle cx="60" cy="6"   r="2.5" fill="currentColor" opacity="0.7"/>
+              <circle cx="60" cy="114" r="2.5" fill="currentColor" opacity="0.7"/>
+              <circle cx="6"  cy="60"  r="2.5" fill="currentColor" opacity="0.7"/>
+              <circle cx="114" cy="60" r="2.5" fill="currentColor" opacity="0.7"/>
+            </svg>
+          </div>
+
+          <h1 id="form-heading" class="hero-title">
+            <span class="hero-title__eyebrow">Mechatronics</span>
+            <span class="hero-title__main">Career<br>Architect</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            AI-powered niche analysis and<br>
+            skills gap report for engineering students
+          </p>
+
+          <div class="hero-chips">
+            <span class="hero-chip">6 Career Niches</span>
+            <span class="hero-chip">ML Classifier</span>
+            <span class="hero-chip">Skills Gap Report</span>
+            <span class="hero-chip">Career Roadmap PDF</span>
+          </div>
+
+          <div class="hero-status">
+            <span class="status-dot"></span>
+            <span class="hero-status__label">System online · MCA v6.0 · Model loaded</span>
+          </div>
+
+        </div>
+
+        <!-- Decorative bottom edge rule -->
+        <div class="hero-panel__rule" aria-hidden="true"></div>
+      </aside>
+
+      <!-- Right: Form -->
+      <div class="form-panel">
+        <div class="form-panel__inner">
+
+          <!-- Mobile-only header (hidden on desktop where hero-panel is visible) -->
+          <div class="mobile-header" aria-hidden="true">
+            <span class="mobile-header__title">Mechatronics Career Architect</span>
+          </div>
+
+          <!-- Error region -->
+          <div id="error-msg" role="alert" aria-live="polite" class="error-banner" hidden></div>
+
+          <form id="upload-form" enctype="multipart/form-data" novalidate>
+
+            <!-- 01: CV Upload -->
+            <fieldset class="fieldset">
+              <legend class="fieldset__legend">
+                <span class="fieldset__num">01</span>
+                Upload CV
+              </legend>
+
+              <label for="cv_file" class="drop-zone" id="drop-label">
+                <div class="drop-zone__inner">
+                  <div class="drop-zone__icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                         stroke-linecap="round" stroke-linejoin="round" width="36" height="36">
+                      <path d="M12 16V4m0 0L8 8m4-4 4 4"/>
+                      <path d="M20 16v2a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2"/>
+                    </svg>
+                  </div>
+                  <span class="drop-zone__text" id="drop-text">
+                    Drop PDF here or <span class="drop-zone__browse">browse files</span>
+                  </span>
+                  <span class="drop-zone__hint">PDF only &nbsp;·&nbsp; max 10 MB</span>
+                </div>
+                <input type="file" id="cv_file" name="cv_file" accept=".pdf" class="sr-only"
+                       aria-describedby="drop-hint">
+              </label>
+              <p id="drop-hint" class="sr-only">Upload a PDF CV file, maximum 10 megabytes</p>
+            </fieldset>
+
+            <!-- 02: Career Preferences -->
+            <fieldset class="fieldset">
+              <legend class="fieldset__legend">
+                <span class="fieldset__num">02</span>
+                Career Preferences
+                <span class="legend-hint">optional</span>
+              </legend>
+
+              <div class="prefs-grid">
+
+                <div class="pref-item">
+                  <label for="work_environment" class="pref-label">
+                    Work Setting
+                    <span class="pref-sublabel">Your ideal daily environment</span>
+                  </label>
+                  <select id="work_environment" name="work_environment" class="pref-select">
+                    <option value="-2">Always in an office / behind a screen</option>
+                    <option value="-1">Mostly office, some lab time</option>
+                    <option value="0" selected>No strong preference</option>
+                    <option value="1">Mostly hands-on in a lab or workshop</option>
+                    <option value="2">Always on-site, machines &amp; equipment</option>
+                  </select>
+                </div>
+
+                <div class="pref-item">
+                  <label for="system_level" class="pref-label">
+                    Engineering Focus
+                    <span class="pref-sublabel">Software logic vs physical hardware</span>
+                  </label>
+                  <select id="system_level" name="system_level" class="pref-select">
+                    <option value="-2">High-level software, algorithms &amp; AI</option>
+                    <option value="-1">Mostly software with some hardware</option>
+                    <option value="0" selected>Equal mix of software and hardware</option>
+                    <option value="1">Mostly hardware with some firmware</option>
+                    <option value="2">Low-level hardware, circuits &amp; sensors</option>
+                  </select>
+                </div>
+
+                <div class="pref-item">
+                  <label for="industry_interest" class="pref-label">
+                    Industry Interest
+                    <span class="pref-sublabel">The sector you want to work in</span>
+                  </label>
+                  <select id="industry_interest" name="industry_interest" class="pref-select">
+                    <option value="-2">Consumer electronics &amp; tech products</option>
+                    <option value="-1">Startups &amp; innovative tech companies</option>
+                    <option value="0" selected>Open to any industry</option>
+                    <option value="1">Manufacturing &amp; industrial automation</option>
+                    <option value="2">Automotive, aerospace &amp; heavy industry</option>
+                  </select>
+                </div>
+
+                <div class="pref-item">
+                  <label for="team_scale" class="pref-label">
+                    Team Scale
+                    <span class="pref-sublabel">Your preferred working environment</span>
+                  </label>
+                  <select id="team_scale" name="team_scale" class="pref-select">
+                    <option value="-2">Solo or very small team (1–5 people)</option>
+                    <option value="-1">Small agile team (5–15 people)</option>
+                    <option value="0" selected>No strong preference</option>
+                    <option value="1">Medium-sized engineering department</option>
+                    <option value="2">Large corporation with structured teams</option>
+                  </select>
+                </div>
+
+                <div class="pref-item pref-item--wide">
+                  <label for="travel_tolerance" class="pref-label">
+                    Field Work Tolerance
+                    <span class="pref-sublabel">Travel and on-site deployment</span>
+                  </label>
+                  <select id="travel_tolerance" name="travel_tolerance" class="pref-select">
+                    <option value="-2">Desk job only — no travel at all</option>
+                    <option value="-1">Occasional day trips, no overnight stays</option>
+                    <option value="0" selected>Some travel is fine</option>
+                    <option value="1">Regular travel to client sites or factories</option>
+                    <option value="2">Full field deployment — travel is my thing</option>
+                  </select>
+                </div>
+
+              </div>
+            </fieldset>
+
+            <!-- Submit -->
+            <div class="submit-row">
+              <button id="submit-btn" type="submit" class="btn-primary">
+                <span class="btn-label">Run Analysis</span>
+                <span class="btn-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                       stroke-linecap="round" stroke-linejoin="round" width="17" height="17">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Loading state -->
+          <div id="loading-state" class="loading-state" hidden
+               aria-live="polite" aria-label="Analysing your CV">
+            <div class="progress-bar-track" aria-hidden="true">
+              <div class="progress-bar-fill" id="progress-fill"></div>
+            </div>
+            <p class="loading-text" id="loading-text">
+              Initialising pipeline<span class="dots-pulse"></span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ── Results Page ──────────────────────────────────────────────── -->
+  <section id="results-page" class="page-section" hidden aria-labelledby="results-heading">
+    <div class="results-layout">
+
+      <!-- Header row -->
+      <div class="results-header">
+        <h2 id="results-heading" class="results-heading">Analysis Complete</h2>
+
+        <div id="pivot-note" class="pivot-note" hidden role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               width="15" height="15" aria-hidden="true" style="flex-shrink:0;margin-top:1px">
+            <circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/>
+          </svg>
+          <p id="pivot-explanation"></p>
+        </div>
+
+        <div id="equal-scores-notice" class="equal-scores-notice" hidden role="note">
+          All niches scored equally — your CV shows broad, balanced skills across all 6 areas.
+        </div>
+      </div>
+
+      <!-- Dashboard grid -->
+      <div class="results-grid">
+
+        <!-- Left column: Niche Rankings -->
+        <section id="niche-rankings" class="results-panel panel--rankings"
+                 aria-labelledby="rankings-heading">
+          <h3 id="rankings-heading" class="section-heading">Niche Recommendations</h3>
+          <div id="niche-cards" class="niche-cards" role="list"></div>
+        </section>
+
+        <!-- Right column: stacked detail panels -->
+        <div class="results-right">
+
+          <!-- Radar Chart -->
+          <section id="radar-chart-section" class="results-panel"
+                   aria-labelledby="radar-heading">
+            <h3 id="radar-heading" class="section-heading">Proficiency Radar</h3>
+            <div class="radar-wrap">
+              <img id="chart-img" src=""
+                   alt="Radar chart showing proficiency across all 6 mechatronics niches"
+                   class="radar-img" hidden>
+              <p id="chart-unavailable" class="chart-unavailable" hidden>
+                Radar data unavailable
+              </p>
+            </div>
+          </section>
+
+          <!-- Skills Gap -->
+          <section id="skills-gap" class="results-panel" aria-labelledby="gap-heading">
+            <h3 id="gap-heading" class="section-heading">Skills Gap Analysis</h3>
+
+            <div class="coverage-badge-wrap">
+              <div class="coverage-badge" role="img" aria-label="Benchmark coverage percentage">
+                <svg viewBox="0 0 60 60" class="coverage-ring" aria-hidden="true">
+                  <circle class="coverage-ring__track" cx="30" cy="30" r="24"/>
+                  <circle class="coverage-ring__fill" id="coverage-ring-fill" cx="30" cy="30" r="24"/>
+                </svg>
+                <span id="coverage-pct" class="coverage-pct">0%</span>
+              </div>
+              <div class="coverage-text">
+                <p class="coverage-label">of benchmark skills detected</p>
+              </div>
+            </div>
+
+            <div class="skills-columns">
+              <div class="skills-column skills-column--present">
+                <h4 class="skills-column__title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                       stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                  Skills You Have
+                </h4>
+                <ul id="present-skills-list" class="skills-list skills-list--present"></ul>
+              </div>
+              <div class="skills-column skills-column--missing">
+                <h4 class="skills-column__title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                       stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true">
+                    <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+                  </svg>
+                  Skills to Develop
+                </h4>
+                <ul id="missing-skills-list" class="skills-list skills-list--missing"></ul>
+                <p id="no-missing-msg" class="no-missing-msg" hidden>
+                  All benchmark skills detected — optimal match.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <!-- PDF Download -->
+          <section id="download-section" class="results-panel" aria-labelledby="download-heading">
+            <h3 id="download-heading" class="section-heading">Career Roadmap</h3>
+            <p class="download-desc">
+              A personalised PDF outlining your top career paths, skills to develop,
+              and recommended next steps.
+            </p>
+            <button id="download-btn" class="btn-download" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                   stroke-linecap="round" stroke-linejoin="round" width="17" height="17" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Download Career Roadmap PDF
+            </button>
+            <p id="download-error" class="download-error" hidden>
+              PDF generation failed — please try again.
+            </p>
+          </section>
+
+        </div><!-- /results-right -->
+      </div><!-- /results-grid -->
+
+      <!-- Start over -->
+      <div class="start-over-wrap">
+        <a href="/" id="start-over" class="start-over-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" stroke-linejoin="round" width="13" height="13" aria-hidden="true">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+          Analyse another CV
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="/static/js/app.js"></script>
+  <script>
+    // 3D tilt on result panels
+    document.querySelectorAll('.results-panel').forEach(el => {
+      el.addEventListener('mousemove', e => {
+        const r = el.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width  - 0.5;
+        const y = (e.clientY - r.top)  / r.height - 0.5;
+        el.style.transform =
+          `perspective(1000px) rotateY(${x * 2.5}deg) rotateX(${-y * 2.5}deg) translateZ(3px)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transition = 'transform 0.5s cubic-bezier(0.22,1,0.36,1)';
+        el.style.transform  = '';
+        setTimeout(() => { el.style.transition = ''; }, 500);
+      });
+    });
+
+    // Hero panel — multi-layer mouse parallax
+    // The content block tilts in 3D toward the cursor;
+    // logo and chips shift on a deeper layer for a parallax depth effect.
+    (function () {
+      const panel   = document.querySelector('.hero-panel');
+      const content = document.querySelector('.hero-panel__content');
+      const logo    = document.querySelector('.hero-logo');
+      const chips   = document.querySelector('.hero-chips');
+      if (!panel || !content) return;
+
+      const ease = 'transform 0.55s cubic-bezier(0.22,1,0.36,1)';
+
+      panel.addEventListener('mousemove', e => {
+        const r  = panel.getBoundingClientRect();
+        const x  = (e.clientX - r.left) / r.width  - 0.5;  // -0.5 → 0.5
+        const y  = (e.clientY - r.top)  / r.height - 0.5;
+
+        // Outer content: subtle 3D tilt
+        content.style.transition = '';
+        content.style.transform  =
+          `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateZ(6px)`;
+
+        // Logo: translate on a deeper layer (parallax illusion)
+        if (logo) {
+          logo.style.transition = '';
+          logo.style.transform  = `translate(${x * 14}px, ${y * 14}px)`;
+        }
+
+        // Chips: shift slightly less than logo
+        if (chips) {
+          chips.style.transition = '';
+          chips.style.transform  = `translate(${x * 6}px, ${y * 6}px)`;
+        }
+      });
+
+      panel.addEventListener('mouseleave', () => {
+        content.style.transition = ease;
+        content.style.transform  = '';
+        if (logo)  { logo.style.transition  = ease; logo.style.transform  = ''; }
+        if (chips) { chips.style.transition = ease; chips.style.transform = ''; }
+        setTimeout(() => {
+          content.style.transition = '';
+          if (logo)  logo.style.transition  = '';
+          if (chips) chips.style.transition = '';
+        }, 550);
+      });
+    })();
+  </script>
+</body>
+</html>

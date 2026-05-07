@@ -1,0 +1,327 @@
+# scoring_config.yaml — Intent Affinity Map & Override Penalty Config
+#
+# This file is the single source of truth for two things:
+#
+#   1. intent_affinity_map
+#      Maps each UserPreferences dimension and its possible integer values (-2 to +2)
+#      to per-niche affinity deltas. A delta is added to the 0.5 baseline to compute
+#      the intent component for a niche. Missing niche keys default to 0.0.
+#
+#      Formula (per niche):
+#        intent_n = clamp(0.5 + sum(all matching deltas across all preference keys), 0, 1)
+#
+#      The integer preference values are YAML keys, so they must be quoted strings
+#      (e.g., "2") because bare integers are valid YAML keys only in mappings and some
+#      parsers silently convert them — quoting prevents any ambiguity.
+#
+#   2. override_penalty_config
+#      A list of rules. Each rule says: "if the user's preference key equals threshold,
+#      subtract penalty from that niche's composite score (post 60/40 weighting)."
+#      The penalty is clamped so a niche score never goes below 0.0.
+#      pivot_applied is set to true if any penalty > 0 was actually applied.
+#
+# Design rationale:
+#   - All weights live here, not in scorer.py. This means the scoring behaviour
+#     can be tuned by editing this file without touching any Python code.
+#   - The intent_affinity_map uses -2 to +2 integer keys matching the UserPreferences
+#     schema from Phase 6. Values 0 (neutral) are intentionally absent — a missing key
+#     contributes 0.0 delta (neutral baseline is 0.5 in code, not here).
+#   - Override penalties are post-composite additive subtractions. At max penalty
+#     (0.25) a niche whose composite is 0.85 becomes 0.60, while its nearest competitor
+#     at 0.80 remains 0.80 — guaranteeing at least a 1-rank demotion (FR-006, SC-004).
+#
+# Canonical niche keys used in this file (must match CANONICAL_NICHES in model_io.py):
+#   industrial_automation, robotics, embedded_systems,
+#   automotive, mechanical_design, technical_management
+
+# ─────────────────────────────────────────────────────────────────────────────
+# INTENT AFFINITY MAP
+# ─────────────────────────────────────────────────────────────────────────────
+intent_affinity_map:
+
+  # ── work_environment ────────────────────────────────────────────────────────
+  # -2 = strongly prefers site-based work (factory floor, field service, plants)
+  # +2 = strongly prefers office-based work (desk, remote, lab with a PC)
+  #
+  # Site-heavy niches (automotive field, industrial automation commissioning,
+  # mechanical design workshop): gain positive delta for site preference.
+  # Desk-heavy niches (embedded SW, technical management): gain negative delta.
+  work_environment:
+    "-2":   # Strongly prefers site-based work → boost field niches
+      automotive:             0.08
+      mechanical_design:      0.08
+      industrial_automation:  0.06
+      robotics:               0.02
+      embedded_systems:      -0.05
+      technical_management:  -0.10
+    "-1":   # Slightly prefers site-based work
+      automotive:             0.04
+      mechanical_design:      0.04
+      industrial_automation:  0.03
+      robotics:               0.01
+      embedded_systems:      -0.02
+      technical_management:  -0.05
+    "1":    # Slightly prefers office-based work
+      technical_management:   0.05
+      embedded_systems:       0.04
+      robotics:               0.01
+      industrial_automation: -0.03
+      automotive:            -0.04
+      mechanical_design:     -0.04
+    "2":    # Strongly prefers office-based work → boost desk niches
+      technical_management:   0.10
+      embedded_systems:       0.08
+      robotics:               0.02
+      industrial_automation: -0.05
+      automotive:            -0.10
+      mechanical_design:     -0.10
+
+  # ── system_level ────────────────────────────────────────────────────────────
+  # -2 = strongly prefers hardware-focused work (physical systems, electronics)
+  # +2 = strongly prefers software-focused work (coding, algorithms, firmware)
+  #
+  # Hardware-heavy niches: mechanical_design (pure HW), industrial_automation (HW+SW),
+  # automotive (HW ECU focus). Software-heavy: embedded SW, technical management
+  # (architecture, processes), robotics SW (ROS2, path planning).
+  system_level:
+    "-2":   # Strongly hardware-oriented
+      mechanical_design:      0.10
+      industrial_automation:  0.06
+      automotive:             0.04
+      robotics:              -0.03
+      embedded_systems:      -0.05
+      technical_management:  -0.08
+    "-1":   # Slightly hardware-oriented
+      mechanical_design:      0.05
+      industrial_automation:  0.03
+      automotive:             0.02
+      robotics:              -0.01
+      embedded_systems:      -0.02
+      technical_management:  -0.04
+    "1":    # Slightly software-oriented
+      embedded_systems:       0.05
+      robotics:               0.04
+      technical_management:   0.02
+      automotive:            -0.02
+      industrial_automation: -0.03
+      mechanical_design:     -0.05
+    "2":    # Strongly software-oriented
+      embedded_systems:       0.10
+      robotics:               0.08
+      technical_management:   0.04
+      automotive:            -0.04
+      industrial_automation: -0.06
+      mechanical_design:     -0.10
+
+  # ── industry_interest ────────────────────────────────────────────────────────
+  # -2 = strongly prefers heavy industry (oil & gas, cement, steel, mining)
+  # +2 = strongly prefers consumer electronics / high-tech / startups
+  #
+  # Heavy industry aligns with industrial_automation and mechanical_design.
+  # Consumer electronics / high-tech aligns with embedded_systems and robotics.
+  # Automotive sits in the middle (both heavy manufacturing and high-tech ECU).
+  industry_interest:
+    "-2":   # Strongly heavy industry / manufacturing
+      industrial_automation:  0.10
+      mechanical_design:      0.08
+      automotive:             0.04
+      robotics:              -0.04
+      embedded_systems:      -0.06
+      technical_management:  -0.02
+    "-1":   # Slightly heavy industry
+      industrial_automation:  0.05
+      mechanical_design:      0.04
+      automotive:             0.02
+      robotics:              -0.02
+      embedded_systems:      -0.03
+      technical_management:  -0.01
+    "1":    # Slightly consumer electronics / high-tech
+      embedded_systems:       0.06
+      robotics:               0.05
+      automotive:             0.02
+      industrial_automation: -0.03
+      mechanical_design:     -0.04
+      technical_management:   0.01
+    "2":    # Strongly consumer electronics / high-tech / startup
+      embedded_systems:       0.10
+      robotics:               0.10
+      automotive:             0.02
+      industrial_automation: -0.06
+      mechanical_design:     -0.08
+      technical_management:   0.02
+
+  # ── team_scale ───────────────────────────────────────────────────────────────
+  # -2 = strongly prefers large organisations (big corporations, government, defence)
+  # +2 = strongly prefers startups / small teams / individual contributors
+  #
+  # Large-org niches: technical_management (requires org hierarchy), automotive
+  # (Tier-1 OEM structures), industrial_automation (EPC companies).
+  # Small-team niches: robotics (startups, R&D), embedded (startup IoT products).
+  team_scale:
+    "-2":   # Strongly large-org oriented
+      technical_management:   0.10
+      automotive:             0.06
+      industrial_automation:  0.04
+      mechanical_design:      0.02
+      embedded_systems:      -0.04
+      robotics:              -0.06
+    "-1":   # Slightly large-org oriented
+      technical_management:   0.05
+      automotive:             0.03
+      industrial_automation:  0.02
+      mechanical_design:      0.01
+      embedded_systems:      -0.02
+      robotics:              -0.03
+    "1":    # Slightly startup / small-team oriented
+      robotics:               0.05
+      embedded_systems:       0.04
+      mechanical_design:      0.01
+      industrial_automation: -0.02
+      automotive:            -0.03
+      technical_management:  -0.05
+    "2":    # Strongly startup / individual contributor oriented
+      robotics:               0.10
+      embedded_systems:       0.08
+      mechanical_design:      0.02
+      industrial_automation: -0.04
+      automotive:            -0.06
+      technical_management:  -0.10
+
+  # ── travel_tolerance ─────────────────────────────────────────────────────────
+  # -2 = high travel is acceptable (commissioning, field service, site visits)
+  # +2 = no travel preferred (pure desk/lab work with fixed location)
+  #
+  # High-travel niches: industrial_automation (factory commissioning), automotive
+  # (proving grounds, supplier visits), mechanical_design (site visits).
+  # Low-travel niches: embedded_systems (pure firmware), technical_management
+  # (office leadership), robotics (lab-based R&D).
+  travel_tolerance:
+    "-2":   # High travel is fine → boost field/commissioning niches
+      industrial_automation:  0.08
+      automotive:             0.06
+      mechanical_design:      0.04
+      robotics:              -0.02
+      embedded_systems:      -0.04
+      technical_management:  -0.06
+    "-1":   # Some travel acceptable
+      industrial_automation:  0.04
+      automotive:             0.03
+      mechanical_design:      0.02
+      robotics:              -0.01
+      embedded_systems:      -0.02
+      technical_management:  -0.03
+    "1":    # Prefers minimal travel
+      embedded_systems:       0.04
+      technical_management:   0.03
+      robotics:               0.02
+      industrial_automation: -0.02
+      automotive:            -0.03
+      mechanical_design:     -0.02
+    "2":    # Strongly prefers no travel → boost desk/lab niches
+      embedded_systems:       0.08
+      technical_management:   0.06
+      robotics:               0.04
+      industrial_automation: -0.04
+      automotive:            -0.06
+      mechanical_design:     -0.04
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# OVERRIDE PENALTY CONFIG
+# ─────────────────────────────────────────────────────────────────────────────
+#
+# Each entry is a conflict rule: when the user's preference key equals threshold,
+# subtract penalty from that niche's composite score. The penalty is applied AFTER
+# the 60/40 weighted composite is computed, so it directly reduces the final score.
+#
+# Why additive subtraction rather than a multiplier?
+#   Additive penalty is transparent: the score_breakdown shows the exact amount
+#   subtracted. A user can see "automotive: composite 0.82, penalty -0.25, final 0.57"
+#   and immediately understand why automotive dropped in rank (Constitution V).
+#
+# Penalty magnitudes are chosen so a max-conflict penalty (0.25) is sufficient to
+# demote a niche by at least 1 rank even when it leads by up to 0.24 in composite
+# score — satisfying FR-006 and SC-004.
+#
+# work_environment conflicts:
+#   - Office-preferring users (value +2) conflict with site-heavy niches
+#     (automotive commissioning, mechanical design site work).
+#   - Site-preferring users (value -2) conflict with desk-heavy niches
+#     (technical management, embedded systems pure firmware).
+override_penalty_config:
+
+  # Office preference conflicts with site-heavy niches
+  - preference: work_environment
+    threshold: 2        # Strongly office → penalise site-heavy niches
+    niche: automotive
+    penalty: 0.25       # Automotive requires factory floors and proving grounds
+
+  - preference: work_environment
+    threshold: 2        # Strongly office
+    niche: mechanical_design
+    penalty: 0.20       # Mechanical design often requires workshop/site visits
+
+  - preference: work_environment
+    threshold: 2        # Strongly office
+    niche: industrial_automation
+    penalty: 0.15       # Automation commissioning is heavily site-based
+
+  # Site preference conflicts with desk-heavy niches
+  - preference: work_environment
+    threshold: -2       # Strongly site → penalise desk-heavy niches
+    niche: technical_management
+    penalty: 0.25       # Technical management is almost entirely office-based
+
+  - preference: work_environment
+    threshold: -2       # Strongly site
+    niche: embedded_systems
+    penalty: 0.15       # Firmware development is desk/lab work
+
+  # system_level (hardware vs software) conflicts
+  - preference: system_level
+    threshold: 2        # Strongly software → penalise pure hardware niche
+    niche: mechanical_design
+    penalty: 0.20       # Mechanical design is almost entirely hardware
+
+  - preference: system_level
+    threshold: -2       # Strongly hardware → penalise pure software niche
+    niche: embedded_systems
+    penalty: 0.15       # Embedded systems has heavy SW component (firmware)
+
+  # industry_interest conflicts
+  - preference: industry_interest
+    threshold: 2        # Strongly consumer/high-tech → penalise heavy industry niche
+    niche: industrial_automation
+    penalty: 0.20       # Industrial automation is the heavy-industry niche
+
+  - preference: industry_interest
+    threshold: -2       # Strongly heavy industry → penalise high-tech niche
+    niche: robotics
+    penalty: 0.15       # Robotics is more startup/research oriented
+
+  # travel_tolerance conflicts
+  - preference: travel_tolerance
+    threshold: 2        # Strongly no-travel → penalise high-travel niches
+    niche: industrial_automation
+    penalty: 0.20       # Automation commissioning involves frequent site travel
+
+  - preference: travel_tolerance
+    threshold: 2        # Strongly no-travel
+    niche: automotive
+    penalty: 0.15       # Automotive work involves proving ground and supplier visits
+
+  - preference: travel_tolerance
+    threshold: -2       # High travel OK → penalise desk-only niches (mild)
+    niche: embedded_systems
+    penalty: 0.10       # Embedded SW dev is mostly fixed-location
+
+  # team_scale conflicts
+  - preference: team_scale
+    threshold: 2        # Strongly startup/individual → penalise large-org niche
+    niche: technical_management
+    penalty: 0.20       # Technical management roles exist mainly in large orgs
+
+  - preference: team_scale
+    threshold: -2       # Strongly large-org → penalise startup-oriented niche
+    niche: robotics
+    penalty: 0.15       # Robotics is more startup/R&D than large-corp

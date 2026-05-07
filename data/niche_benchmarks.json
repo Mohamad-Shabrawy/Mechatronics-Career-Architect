@@ -1,0 +1,583 @@
+{
+  "Industrial Automation": {
+    "niche_description": "Design, program, and commission automated manufacturing systems using PLCs, SCADA, and HMI platforms. Dominant in Egyptian industrial sectors including textiles, food & beverage, cement, oil & gas, and pharmaceuticals.",
+    "ideal_match_score": 100,
+    "top_skills": [
+      {
+        "rank": 1,
+        "skill": "PLC Programming — Siemens TIA Portal (S7-1200 / S7-1500)",
+        "tool_or_platform": "Siemens TIA Portal v17+",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "Siemens is the dominant PLC brand across Egyptian factories (textiles, cement, food). TIA Portal proficiency is the single most-requested skill in Egyptian automation job postings.",
+        "learning_objective": "Ability to design and implement full PLC programs using Ladder Logic (LAD), Function Block Diagram (FBD), and Structured Text (ST) for industrial sequences, safety interlocks, and PID loops in TIA Portal.",
+        "certifications_recognized_in_egypt": ["Siemens SITRAIN Certification", "Udemy TIA Portal Professional"]
+      },
+      {
+        "rank": 2,
+        "skill": "SCADA System Development",
+        "tool_or_platform": "Siemens WinCC / Inductive Automation Ignition / Wonderware",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Every major Egyptian plant (oil refineries, water treatment, power) runs SCADA. WinCC is the most widely deployed platform due to Siemens infrastructure prevalence.",
+        "learning_objective": "Ability to architect, configure, and deploy a full SCADA system including tag databases, alarm management, historical trending, and OPC-UA data communication to PLCs.",
+        "certifications_recognized_in_egypt": ["Inductive Automation Ignition Core Certification", "Siemens WinCC Advanced Training"]
+      },
+      {
+        "rank": 3,
+        "skill": "HMI Design & Configuration",
+        "tool_or_platform": "Siemens KTP / TP Series Panels, Weintek, Delta HMI",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Delta and Weintek HMIs are widely adopted in Egyptian SME factories due to their cost-effectiveness; Siemens panels dominate large-scale installations.",
+        "learning_objective": "Ability to design ergonomic, operator-friendly HMI screens with process mimics, setpoint controls, alarm pop-ups, and recipe management, ensuring clear fault visualization.",
+        "certifications_recognized_in_egypt": ["Delta HMI Application Design Certificate", "Siemens Basic Panel Configuration (SITRAIN)"]
+      },
+      {
+        "rank": 4,
+        "skill": "Industrial Fieldbus & Networking Protocols",
+        "tool_or_platform": "PROFIBUS DP, PROFINET, Modbus RTU/TCP, EtherNet/IP",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Egyptian plants run mixed-generation equipment; engineers must bridge legacy PROFIBUS installations with modern PROFINET and Modbus TCP networks.",
+        "learning_objective": "Ability to configure, troubleshoot, and extend industrial networks using PROFIBUS DP, PROFINET IO, and Modbus TCP, including device parameterization via GSD/GSDML files.",
+        "certifications_recognized_in_egypt": ["PI (PROFIBUS & PROFINET International) Certified Engineer", "Schneider Electric Modbus Network Specialist"]
+      },
+      {
+        "rank": 5,
+        "skill": "Schneider Electric PLC Programming",
+        "tool_or_platform": "EcoStruxure Machine Expert / Unity Pro (Modicon M221, M241, M251)",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Schneider Electric holds the second-largest PLC market share in Egypt, especially in water treatment, HVAC, and building automation projects.",
+        "learning_objective": "Ability to program Modicon PLCs in EcoStruxure Machine Expert using SFC, ST, and FBD, configure CANopen and Modbus slaves, and commission servo drives with motion libraries.",
+        "certifications_recognized_in_egypt": ["Schneider Electric Automation University Certificate", "EcoStruxure Machine Expert Specialist"]
+      },
+      {
+        "rank": 6,
+        "skill": "Variable Frequency Drives (VFD) & Motor Control",
+        "tool_or_platform": "Siemens SINAMICS, ABB ACS880, Schneider Altivar",
+        "weight_in_niche": 0.85,
+        "egyptian_market_relevance": "Egyptian manufacturing heavily relies on VFD-controlled conveyor, pump, and fan systems. Energy-saving regulations from NREA are pushing wider VFD adoption.",
+        "learning_objective": "Ability to parameterize, commission, and troubleshoot VFDs for both scalar (V/f) and vector control modes, including fieldbus integration and safety function activation (STO, SS1).",
+        "certifications_recognized_in_egypt": ["ABB Drives Commissioning Certificate", "Siemens SINAMICS Application Training"]
+      },
+      {
+        "rank": 7,
+        "skill": "Pneumatic & Hydraulic Control Systems",
+        "tool_or_platform": "Festo, SMC, Bosch Rexroth",
+        "weight_in_niche": 0.8,
+        "egyptian_market_relevance": "Egyptian food processing, packaging, and textile factories rely heavily on pneumatic actuators integrated with PLC digital outputs.",
+        "learning_objective": "Ability to read and design pneumatic/hydraulic circuit diagrams, select appropriate valves and actuators, and integrate electropneumatic systems with PLC output modules.",
+        "certifications_recognized_in_egypt": ["Festo Certified Pneumatics Technician", "SMC Pneumatics Application Certificate"]
+      },
+      {
+        "rank": 8,
+        "skill": "Process Instrumentation & Control Loops",
+        "tool_or_platform": "4–20 mA sensors, Endress+Hauser, Yokogawa, PID tuning",
+        "weight_in_niche": 0.8,
+        "egyptian_market_relevance": "Egyptian oil & gas, chemical, and water treatment plants are the largest employers of automation engineers, all requiring deep P&ID reading and loop tuning expertise.",
+        "learning_objective": "Ability to select, calibrate, and commission field instruments (pressure, flow, level, temperature transmitters) and tune PID control loops in both manual and automatic modes.",
+        "certifications_recognized_in_egypt": ["ISA Certified Control System Technician (CCST)", "Endress+Hauser Field Instruments Application Training"]
+      },
+      {
+        "rank": 9,
+        "skill": "Electrical Panel Design & Control Schematic Reading",
+        "tool_or_platform": "EPLAN Electric P8, AutoCAD Electrical",
+        "weight_in_niche": 0.75,
+        "egyptian_market_relevance": "Egyptian automation engineers are expected to produce and read full electrical schematics; EPLAN is the standard in multinational manufacturing sites in Egypt.",
+        "learning_objective": "Ability to design motor control circuits, safety relay circuits, and PLC I/O wiring schematics using EPLAN or AutoCAD Electrical, including cable sizing and protection coordination.",
+        "certifications_recognized_in_egypt": ["EPLAN Electric P8 Associate Certificate", "AutoCAD Electrical Fundamentals (Autodesk)"]
+      },
+      {
+        "rank": 10,
+        "skill": "Functional Safety — IEC 62061 / ISO 13849",
+        "tool_or_platform": "Siemens SIMATIC Safety, Pilz PNOZmulti, SISTEMA software",
+        "weight_in_niche": 0.7,
+        "egyptian_market_relevance": "Multinational manufacturers in Egypt (P&G, Unilever, Nestlé factories) require CE-marked machinery with documented safety integrity levels, driving demand for FS-qualified engineers.",
+        "learning_objective": "Ability to perform risk assessments per ISO 13849, calculate PL/SIL levels using SISTEMA, and implement safety functions (emergency stop, two-hand control, guard monitoring) on safety PLCs.",
+        "certifications_recognized_in_egypt": ["TÜV Rheinland Functional Safety Engineer (FSEng)", "Pilz Safety Awareness Certificate"]
+      }
+    ]
+  },
+
+  "Robotics": {
+    "niche_description": "Design, program, and deploy robotic systems — from industrial manipulators and AMRs to research-grade platforms. A growing niche in Egypt driven by automotive supplier parks (Suez Canal zone), logistics automation, and university research labs.",
+    "ideal_match_score": 100,
+    "top_skills": [
+      {
+        "rank": 1,
+        "skill": "Robot Operating System 2 (ROS 2)",
+        "tool_or_platform": "ROS 2 Humble / Iron, Ubuntu 22.04",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "ROS 2 is the universal framework for robotics R&D in Egyptian universities and startup companies. It is the most-demanded robotics skill in Egyptian job postings targeting fresh graduates.",
+        "learning_objective": "Ability to architect multi-node ROS 2 systems using publishers, subscribers, services, and actions; integrate sensor drivers (LiDAR, camera, IMU); and simulate full robot behavior in Gazebo.",
+        "certifications_recognized_in_egypt": ["The Construct ROS 2 Developer Certificate", "Udacity Robotics Software Engineer Nanodegree"]
+      },
+      {
+        "rank": 2,
+        "skill": "Industrial Robot Programming (FANUC / ABB / KUKA)",
+        "tool_or_platform": "FANUC ROBOGUIDE, ABB RobotStudio, KUKA KUKA|prc",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "FANUC and ABB robots are installed in Egyptian automotive suppliers, ceramic factories, and packaging lines. ABB RobotStudio offline programming is the top requested skill in Egyptian industrial robot vacancies.",
+        "learning_objective": "Ability to create, simulate, and optimize robot programs using FANUC TP/Karel or ABB RAPID, configure tool frames and user frames, and program pick-and-place tasks with vision-guided correction.",
+        "certifications_recognized_in_egypt": ["ABB Robotics Operator & Programming Certificate", "FANUC Certified Robot Operator (CRO)"]
+      },
+      {
+        "rank": 3,
+        "skill": "Robot Kinematics & Dynamics",
+        "tool_or_platform": "MATLAB Robotics Toolbox, Python (NumPy/SciPy), Peter Corke Toolbox",
+        "weight_in_niche": 0.95,
+        "egyptian_market_relevance": "Core competency tested in Egyptian university robotics courses and multinational technical interviews; essential for custom manipulator design and trajectory optimization.",
+        "learning_objective": "Ability to derive Denavit-Hartenberg parameters for a serial manipulator, solve both forward and inverse kinematics analytically and numerically, and compute joint torques using the Newton-Euler or Lagrangian method.",
+        "certifications_recognized_in_egypt": ["Coursera Modern Robotics Specialization (Northwestern)", "edX Robotics MicroMasters (Penn)"]
+      },
+      {
+        "rank": 4,
+        "skill": "SLAM & Autonomous Navigation",
+        "tool_or_platform": "Nav2 (ROS 2), Cartographer, RTAB-Map, RPLiDAR",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Egyptian logistics companies and warehousing startups (e.g., in 10th of Ramadan City industrial zones) are piloting AMRs, creating strong demand for SLAM-capable engineers.",
+        "learning_objective": "Ability to implement a full autonomous navigation stack using ROS 2 Nav2, including 2D LiDAR-based SLAM for map building, AMCL localization on a known map, and DWA/TEB path planning.",
+        "certifications_recognized_in_egypt": ["The Construct SLAM & Nav2 Developer Path", "Udemy ROS 2 Navigation Stack Masterclass"]
+      },
+      {
+        "rank": 5,
+        "skill": "Computer Vision for Robotics",
+        "tool_or_platform": "OpenCV, YOLO (Ultralytics), ROS 2 vision_msgs, Intel RealSense",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Vision-guided bin-picking and quality inspection are the two most common robotics upgrade projects in Egyptian factories, making OpenCV + YOLO the top software combination sought by Egyptian integrators.",
+        "learning_objective": "Ability to build a real-time vision pipeline that detects, classifies, and localizes objects using a calibrated camera, and publishes pose estimates over ROS 2 topics to drive robot pick-and-place actions.",
+        "certifications_recognized_in_egypt": ["OpenCV University Bootcamp Certificate", "Coursera Deep Learning Specialization (applicable to YOLO fine-tuning)"]
+      },
+      {
+        "rank": 6,
+        "skill": "Motion Planning & MoveIt! 2",
+        "tool_or_platform": "MoveIt! 2, OMPL, Pilz Industrial Motion Planner",
+        "weight_in_niche": 0.85,
+        "egyptian_market_relevance": "Required for any custom robotic arm project in Egypt; MoveIt! 2 is the standard collision-aware motion planner used in Egyptian R&D labs and integrator companies.",
+        "learning_objective": "Ability to configure a MoveIt! 2 package from a URDF, plan collision-free Cartesian and joint-space trajectories using OMPL planners, and execute plans on both simulated and real hardware.",
+        "certifications_recognized_in_egypt": ["The Construct MoveIt! 2 for Manipulation Certificate"]
+      },
+      {
+        "rank": 7,
+        "skill": "Robot Programming with C++ & Python",
+        "tool_or_platform": "C++17, Python 3.10+, rclcpp, rclpy",
+        "weight_in_niche": 0.85,
+        "egyptian_market_relevance": "All serious ROS 2 robotics roles in Egypt expect dual-language proficiency: Python for rapid prototyping and C++ for real-time performance-critical nodes.",
+        "learning_objective": "Ability to write production-quality ROS 2 nodes in both rclcpp (C++) and rclpy (Python), implement lifecycle nodes, manage executors and callback groups for concurrent operation.",
+        "certifications_recognized_in_egypt": ["C++ Institute CPA — C++ Certified Associate Programmer"]
+      },
+      {
+        "rank": 8,
+        "skill": "Robot Simulation — Gazebo & RViz 2",
+        "tool_or_platform": "Gazebo Fortress/Harmonic, RViz 2, ros2_control",
+        "weight_in_niche": 0.8,
+        "egyptian_market_relevance": "Critical for Egyptian university graduation projects and companies without physical robot access; simulation-first is the dominant workflow in Egyptian robotics education.",
+        "learning_objective": "Ability to create a complete robot simulation from scratch — URDF/XACRO model, Gazebo world, ros2_control hardware interface — and visualize sensor data, TF trees, and trajectories in RViz 2.",
+        "certifications_recognized_in_egypt": ["The Construct ROS 2 Sim-to-Real Certificate"]
+      },
+      {
+        "rank": 9,
+        "skill": "Collaborative Robotics (Cobot) Integration",
+        "tool_or_platform": "Universal Robots UR3/UR5/UR10, Doosan, OnRobot grippers",
+        "weight_in_niche": 0.75,
+        "egyptian_market_relevance": "UR cobots are being rapidly adopted in Egyptian assembly lines (automotive suppliers in Borg El Arab) for their ease of deployment without extensive safety fencing.",
+        "learning_objective": "Ability to program a UR cobot using URScript and Polyscope, configure tool TCP and payload, implement force-torque based assembly operations, and integrate with vision or conveyor tracking.",
+        "certifications_recognized_in_egypt": ["Universal Robots Certified Systems Integrator (URCSI)", "OnRobot Certified Integrator"]
+      },
+      {
+        "rank": 10,
+        "skill": "Embedded Control for Robotics (Arduino / ROS 2 micro-ROS)",
+        "tool_or_platform": "Arduino, STM32 with micro-ROS, rosserial",
+        "weight_in_niche": 0.7,
+        "egyptian_market_relevance": "Egyptian graduation projects predominantly use Arduino/STM32 as low-level robot controllers bridged to a ROS 2 host via micro-ROS; a practical bridging skill for junior engineers.",
+        "learning_objective": "Ability to flash a micro-ROS agent onto an STM32 or Arduino, define custom message types, and create a reliable low-latency control bridge between a ROS 2 host and embedded actuator/sensor hardware.",
+        "certifications_recognized_in_egypt": ["micro-ROS Official Community Tutorials Completion"]
+      }
+    ]
+  },
+
+  "Embedded Systems": {
+    "niche_description": "Design and develop firmware, hardware, and real-time software for microcontroller and microprocessor-based systems. The largest mechatronics sub-sector in Egypt, spanning consumer electronics, IoT, telecommunications, and industrial control.",
+    "ideal_match_score": 100,
+    "top_skills": [
+      {
+        "rank": 1,
+        "skill": "Bare-Metal Firmware Development — STM32 / ARM Cortex-M",
+        "tool_or_platform": "STM32CubeIDE, STM32CubeMX, HAL / LL libraries",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "STM32 is the most widely used professional MCU family in Egyptian embedded companies and is the benchmark MCU in Egyptian university embedded systems curricula. STM32 proficiency is listed in >70% of Egyptian embedded job postings.",
+        "learning_objective": "Ability to write interrupt-driven, DMA-optimized bare-metal firmware for STM32 devices using HAL and LL libraries, configuring peripherals (UART, SPI, I2C, ADC, TIM) via STM32CubeMX and validating with JTAG/SWD debugging.",
+        "certifications_recognized_in_egypt": ["ST Microelectronics STM32 Embedded Developer Certificate (Udemy/Udacity)", "ARM Accredited Engineer (AAE)"]
+      },
+      {
+        "rank": 2,
+        "skill": "Real-Time Operating Systems (RTOS) — FreeRTOS",
+        "tool_or_platform": "FreeRTOS, Azure RTOS (ThreadX), Zephyr RTOS",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "FreeRTOS is the dominant RTOS in Egyptian embedded products (IoT devices, industrial controllers, medical equipment); virtually every senior embedded role in Egypt lists FreeRTOS as mandatory.",
+        "learning_objective": "Ability to design and implement a multi-task FreeRTOS application with proper task priorities, inter-task communication via queues and semaphores, watchdog management, and deterministic interrupt latency.",
+        "certifications_recognized_in_egypt": ["FreeRTOS Official Training (FreeRTOS.org)", "Coursera RTOS Specialization (University of Colorado)"]
+      },
+      {
+        "rank": 3,
+        "skill": "PCB Design — Altium Designer",
+        "tool_or_platform": "Altium Designer 23+, KiCad (open-source alternative)",
+        "weight_in_niche": 0.95,
+        "egyptian_market_relevance": "Altium Designer is the industry standard PCB tool in Egyptian electronics companies and the Egyptian military supply chain. KiCad is the dominant open-source tool in Egyptian university labs and startups.",
+        "learning_objective": "Ability to design a multi-layer PCB from schematic capture through layout, DRC, and Gerber export — applying design rules for signal integrity, power plane splitting, and controlled-impedance traces.",
+        "certifications_recognized_in_egypt": ["Altium Designer Certified Professional (ACP)", "KiCad PCB Design Certificate (Udemy)"]
+      },
+      {
+        "rank": 4,
+        "skill": "Embedded Communication Protocols",
+        "tool_or_platform": "UART, SPI, I2C, CAN bus, RS-485, USB",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Multi-protocol expertise is essential in Egyptian embedded roles; engineers must interface MCUs to a wide range of sensors, displays, and higher-level systems using the appropriate protocol for each link.",
+        "learning_objective": "Ability to implement, debug, and optimize communication drivers for UART, SPI, I2C, and CAN bus at the register level, including bit-timing configuration, multi-master arbitration, and protocol error handling.",
+        "certifications_recognized_in_egypt": ["Embedded Systems Protocols Masterclass (Udemy)"]
+      },
+      {
+        "rank": 5,
+        "skill": "FPGA Development — Verilog / VHDL",
+        "tool_or_platform": "Xilinx Vivado / Vitis, Intel Quartus Prime",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "FPGA skills are increasingly demanded by Egyptian defense electronics contractors (EMG, AOI) and telecom companies for high-speed signal processing and custom hardware accelerators.",
+        "learning_objective": "Ability to design, synthesize, and implement a digital system in Verilog or VHDL, create timing constraints, run place-and-route in Vivado, and verify design functionality via simulation and on-chip logic analyzer (ILA).",
+        "certifications_recognized_in_egypt": ["Xilinx Certified Embedded Systems Developer (XCES)", "FPGA Design with Verilog Certificate (Coursera/edX)"]
+      },
+      {
+        "rank": 6,
+        "skill": "IoT Development — ESP32 / WiFi / MQTT",
+        "tool_or_platform": "ESP32 (ESP-IDF), AWS IoT Core, MQTT, Node-RED",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Egypt's growing smart building, smart agriculture, and industrial IoT sectors create high demand for ESP32-based connected device developers; ESP32 is the default IoT MCU in Egyptian maker and startup culture.",
+        "learning_objective": "Ability to develop a full IoT product on ESP32 using ESP-IDF: implementing WiFi/BLE connectivity, MQTT over TLS, OTA firmware updates, and low-power sleep modes with wake-on-event.",
+        "certifications_recognized_in_egypt": ["Espressif ESP32 Developer Certificate", "AWS Certified IoT Specialty"]
+      },
+      {
+        "rank": 7,
+        "skill": "Embedded C / C++ Programming",
+        "tool_or_platform": "GCC ARM Toolchain, C11, C++17 (with restrictions for embedded)",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Embedded C is the mandatory language for all hardware-level firmware in Egypt; C++ with zero-overhead abstractions is increasingly required for complex middleware and protocol stacks.",
+        "learning_objective": "Ability to write portable, MISRA-C compliant embedded firmware applying memory-efficient data structures, fixed-point arithmetic, and hardware abstraction layers (HAL) to decouple application logic from hardware.",
+        "certifications_recognized_in_egypt": ["MISRA C:2012 Compliance Training (LDRA / Parasoft)", "C++ Institute CPA Certificate"]
+      },
+      {
+        "rank": 8,
+        "skill": "Embedded Linux & Yocto Project",
+        "tool_or_platform": "Yocto Project, Buildroot, Raspberry Pi / i.MX8",
+        "weight_in_niche": 0.85,
+        "egyptian_market_relevance": "Egyptian companies developing gateways, industrial PCs, and HMI platforms require engineers who can build custom Linux distributions and write kernel modules; Yocto is the professional standard.",
+        "learning_objective": "Ability to build a custom embedded Linux image using Yocto, write a simple Linux kernel character device driver, cross-compile user-space applications, and set up a secure boot chain.",
+        "certifications_recognized_in_egypt": ["Linux Foundation Certified Embedded Linux Engineer (LFCE)", "Coursera Embedded Linux Essentials"]
+      },
+      {
+        "rank": 9,
+        "skill": "Hardware Debugging & Test Equipment",
+        "tool_or_platform": "JTAG/SWD (STLink, J-Link), Oscilloscope, Logic Analyzer",
+        "weight_in_niche": 0.8,
+        "egyptian_market_relevance": "Hands-on hardware debugging is a differentiating skill; Egyptian companies explicitly test oscilloscope and logic analyzer proficiency during technical interviews.",
+        "learning_objective": "Ability to debug embedded firmware using JTAG/SWD breakpoints, inspect real-time signals with an oscilloscope and logic analyzer, and use an LCR meter and multimeter to verify analog circuit behavior.",
+        "certifications_recognized_in_egypt": ["Oscilloscope Fundamentals Certificate (Tektronix Academy)"]
+      },
+      {
+        "rank": 10,
+        "skill": "Bootloader Design & Firmware Update Mechanisms",
+        "tool_or_platform": "Custom STM32 Bootloader, U-Boot, MCUBoot",
+        "weight_in_niche": 0.75,
+        "egyptian_market_relevance": "Field-deployable products in Egypt (smart meters, industrial gateways) require secure, robust OTA/bootloader capabilities; a skill that commands significant salary premium in the Egyptian market.",
+        "learning_objective": "Ability to write a custom bootloader for STM32 that performs firmware integrity verification (CRC/SHA), manages dual-bank flash for fail-safe updates, and handles the application jump sequence.",
+        "certifications_recognized_in_egypt": ["Embedded Systems Security (Coursera/SANS)", "MCUBoot Official Documentation Practitioner"]
+      }
+    ]
+  },
+
+  "Automotive": {
+    "niche_description": "Develop embedded software and electronic control units (ECUs) for vehicles. Egypt's automotive software sector is growing rapidly through Valeo's Egypt R&D center, Continental, ETAS, and the Suez Canal Economic Zone supplier ecosystem.",
+    "ideal_match_score": 100,
+    "top_skills": [
+      {
+        "rank": 1,
+        "skill": "AUTOSAR Classic Platform Architecture",
+        "tool_or_platform": "Vector AUTOSAR (DaVinci Developer/Configurator), EB tresos Studio",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "Valeo Egypt and Continental Egypt explicitly require AUTOSAR Classic skills; it is the foundational architecture for every ECU software project in these companies. AUTOSAR is the #1 skill gap identified in Egyptian automotive engineering graduates.",
+        "learning_objective": "Ability to configure an AUTOSAR Classic BSW stack (MCAL, ECU Abstraction, Services Layer) using Vector DaVinci Configurator, define SWC interfaces via Port/Interface/Composition in DaVinci Developer, and generate/integrate RTE code.",
+        "certifications_recognized_in_egypt": ["Vector Training: AUTOSAR Basic & Advanced", "AUTOSAR Training Partner Certificate (official autosar.org partners)"]
+      },
+      {
+        "rank": 2,
+        "skill": "Automotive Communication Protocols — CAN / LIN / FlexRay",
+        "tool_or_platform": "Vector CANalyzer, CANoe, PEAK PCAN-USB",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "CAN bus proficiency is the single most-tested technical skill in Egyptian automotive software interviews (Valeo, Aptiv). CANoe is the industry-standard tool used daily in Egyptian R&D centers.",
+        "learning_objective": "Ability to design and analyze a CAN network database (DBC file), implement a CAN driver per AUTOSAR SWS, use CANalyzer/CANoe to trace, filter, and stimulate messages, and diagnose bus errors at the physical and data-link layer.",
+        "certifications_recognized_in_egypt": ["Vector Training: CAN Network Design & Diagnostics", "Kvaser CAN Protocol Expert Certificate"]
+      },
+      {
+        "rank": 3,
+        "skill": "ISO 26262 Functional Safety",
+        "tool_or_platform": "LDRA, Parasoft, MISRA C:2012, FMEA worksheets",
+        "weight_in_niche": 0.95,
+        "egyptian_market_relevance": "All Tier-1 automotive suppliers in Egypt (Valeo, Continental) mandate ISO 26262 compliance; FuSa engineers command a 30–40% salary premium in the Egyptian automotive job market.",
+        "learning_objective": "Ability to conduct a Hazard Analysis & Risk Assessment (HARA) per ISO 26262 Part 3, derive safety goals with ASIL ratings, develop the Functional Safety Concept, and implement software safety measures compliant with ASIL B/C requirements.",
+        "certifications_recognized_in_egypt": ["TÜV SÜD ISO 26262 Functional Safety Engineer", "exida CFSE (Certified Functional Safety Expert)"]
+      },
+      {
+        "rank": 4,
+        "skill": "Model-Based Development — MATLAB / Simulink",
+        "tool_or_platform": "MATLAB R2024a, Simulink, Stateflow, Embedded Coder",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Egyptian automotive R&D centers use MATLAB/Simulink as the primary control algorithm development environment; Embedded Coder-generated C code is deployed directly to production ECUs.",
+        "learning_objective": "Ability to model a closed-loop control system in Simulink (e.g., cruise control, ABS), create Stateflow state machines for mode management, configure Embedded Coder for MISRA-C compliant code generation, and validate with SIL testing.",
+        "certifications_recognized_in_egypt": ["MathWorks Simulink Fundamentals Certificate", "MathWorks MATLAB Certified Associate"]
+      },
+      {
+        "rank": 5,
+        "skill": "ECU Calibration — INCA / ETAS / CANape",
+        "tool_or_platform": "ETAS INCA, Vector CANape, ASAP2 (A2L) files",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "ECU calibration roles are among the fastest-growing automotive engineering positions at Valeo Egypt and Continental; INCA and CANape are the two dominant calibration tools in Egyptian automotive R&D.",
+        "learning_objective": "Ability to create A2L measurement and calibration parameter files, connect INCA/CANape to a running ECU via CAN/XCP, measure signal values in real-time, and optimize calibration parameters iteratively using automated scripts.",
+        "certifications_recognized_in_egypt": ["ETAS INCA Calibration Engineer Certificate (ETAS Training Center)", "Vector CANape Fundamentals Training"]
+      },
+      {
+        "rank": 6,
+        "skill": "UDS Diagnostics & OBD-II",
+        "tool_or_platform": "Vector CANoe Diagnostic, ODIS, UDS (ISO 14229), KWP2000",
+        "weight_in_niche": 0.85,
+        "egyptian_market_relevance": "Egyptian vehicle importers, workshops, and ECU remanufacturers require UDS diagnostics expertise; Valeo Egypt's aftersales R&D team is one of the largest local employers of diagnostics engineers.",
+        "learning_objective": "Ability to implement a UDS server on an ECU (diagnostic session control, DTC handling, security access, routine control) and use CANoe's DiagVtestStudio to design automated diagnostic test sequences.",
+        "certifications_recognized_in_egypt": ["Vector Training: UDS Diagnostics for Embedded Systems", "SAE J1979 OBD-II Diagnostics Specialist"]
+      },
+      {
+        "rank": 7,
+        "skill": "HIL / SIL Testing with dSPACE",
+        "tool_or_platform": "dSPACE SCALEXIO, MicroAutoBox II, ControlDesk, Simulink",
+        "weight_in_niche": 0.85,
+        "egyptian_market_relevance": "dSPACE HIL systems are installed in multiple Egyptian automotive company labs; HIL test engineers are among the highest-compensated automotive engineers in Egypt.",
+        "learning_objective": "Ability to set up a dSPACE HIL environment, build plant models for HIL simulation, define automated test cases in ControlDesk, and execute regression test campaigns to verify ECU behavior against specification.",
+        "certifications_recognized_in_egypt": ["dSPACE Academy HIL Testing Certificate", "Simulink Test Certification (MathWorks)"]
+      },
+      {
+        "rank": 8,
+        "skill": "ADAS & Autonomous Driving Fundamentals",
+        "tool_or_platform": "MATLAB/Simulink ADAS Toolbox, Python/OpenCV, ROS 2",
+        "weight_in_niche": 0.8,
+        "egyptian_market_relevance": "Valeo Egypt's ADAS division (cameras, LiDAR, parking sensors) is one of Egypt's premier engineering employers; ADAS algorithm knowledge commands a significant salary premium.",
+        "learning_objective": "Ability to implement a lane detection pipeline using a camera-based system (OpenCV + perspective transform + Hough lines), integrate LiDAR point cloud processing for obstacle detection, and evaluate sensor fusion performance.",
+        "certifications_recognized_in_egypt": ["Udacity Self-Driving Car Engineer Nanodegree", "Coursera Self-Driving Cars Specialization (University of Toronto)"]
+      },
+      {
+        "rank": 9,
+        "skill": "Battery Management Systems (BMS) for EV",
+        "tool_or_platform": "MATLAB/Simulink Battery Toolbox, Kalman Filter (SOC estimation)",
+        "weight_in_niche": 0.75,
+        "egyptian_market_relevance": "Egypt's EV transition (driven by government incentives on EV imports) and growing local EV assembly ambitions are creating rapid BMS engineering demand; currently an underserved skill in the Egyptian market.",
+        "learning_objective": "Ability to design a BMS algorithm implementing cell voltage/temperature monitoring, passive/active cell balancing, SOC estimation via Extended Kalman Filter, and CAN-based communication of battery state to the vehicle network.",
+        "certifications_recognized_in_egypt": ["Coursera Battery Pack Design (University of Michigan)", "EV Battery Systems Design Certificate (SAE International)"]
+      },
+      {
+        "rank": 10,
+        "skill": "Embedded C for Automotive — MISRA Compliance",
+        "tool_or_platform": "GCC ARM, Polyspace Bug Finder, LDRA Testbed",
+        "weight_in_niche": 0.75,
+        "egyptian_market_relevance": "MISRA C compliance is a hard requirement for all production ECU software at Egyptian Tier-1 suppliers; static analysis tool proficiency (Polyspace, LDRA) is explicitly tested during Valeo and Continental Egypt hiring.",
+        "learning_objective": "Ability to write MISRA C:2012 compliant embedded software, run Polyspace or LDRA static analysis to detect rule deviations, and resolve violations through code refactoring without compromising runtime performance.",
+        "certifications_recognized_in_egypt": ["MISRA C Practitioner Certificate (MISRA Consortium)", "Parasoft C/C++test Static Analysis Training"]
+      }
+    ]
+  },
+
+  "Mechanical Design": {
+    "niche_description": "Create, analyze, and optimize mechanical systems and components using CAD and simulation tools. Egypt's mechanical design market spans heavy manufacturing, oil & gas equipment, HVAC, renewable energy, and the booming construction sector.",
+    "ideal_match_score": 100,
+    "top_skills": [
+      {
+        "rank": 1,
+        "skill": "3D CAD Modeling — SolidWorks",
+        "tool_or_platform": "SolidWorks 2024 (parametric modeling, assemblies, drawings)",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "SolidWorks holds the largest CAD market share in Egyptian manufacturing companies and is the only 3D CAD tool tested in Egyptian technical university curricula. It is listed in >80% of mechanical design job postings in Egypt.",
+        "learning_objective": "Ability to create fully-constrained parametric part models with design intent, build complex assemblies with mating relations and configurations, produce engineering drawings with GD&T annotations, and manage a PDM vault.",
+        "certifications_recognized_in_egypt": ["SolidWorks Certified Professional (CSWP)", "SolidWorks Certified Associate (CSWA)"]
+      },
+      {
+        "rank": 2,
+        "skill": "Finite Element Analysis (FEA) — ANSYS Mechanical",
+        "tool_or_platform": "ANSYS Mechanical 2024 R1, SolidWorks Simulation",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "ANSYS is the dominant FEA tool in Egyptian engineering consultancies and multinational manufacturers (Schneider Electric, GE plants in Egypt); FEA proficiency is a hard requirement for senior mechanical roles.",
+        "learning_objective": "Ability to set up and solve static structural, modal, and fatigue analyses in ANSYS Mechanical — including mesh convergence studies, contact definition, load application, and result interpretation to make design decisions.",
+        "certifications_recognized_in_egypt": ["ANSYS Learning Hub Certified Professional", "SolidWorks Simulation Associate (CSWSA-FEA)"]
+      },
+      {
+        "rank": 3,
+        "skill": "CATIA V5 / V6 (3DEXPERIENCE)",
+        "tool_or_platform": "Dassault Systèmes CATIA V5 R29 / 3DEXPERIENCE",
+        "weight_in_niche": 0.95,
+        "egyptian_market_relevance": "CATIA is mandatory for engineers targeting Egyptian aerospace (Egypt Air Industries), automotive body-in-white, and oil & gas pressure vessel design roles. It is the primary CAD platform at Bombardier's Cairo office.",
+        "learning_objective": "Ability to model complex surface geometry using CATIA Generative Shape Design, create production-ready part and assembly models using Part Design and Assembly Design workbenches, and generate 2D drawings with standards-compliant annotations.",
+        "certifications_recognized_in_egypt": ["Dassault Systèmes CATIA V5 Associate Certificate", "3DEXPERIENCE CATIA Part Design Expert"]
+      },
+      {
+        "rank": 4,
+        "skill": "GD&T — Geometric Dimensioning & Tolerancing",
+        "tool_or_platform": "ASME Y14.5-2018, ISO 1101, CETOL 6σ (tolerance analysis)",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "GD&T is a mandatory competency for Egyptian engineers in automotive supplier manufacturing (ISO/TS 16949 certified plants) and oil & gas machining; it is the most-cited skill gap in Egyptian mechanical engineering interviews.",
+        "learning_objective": "Ability to apply the complete GD&T symbol set (form, orientation, location, runout tolerances) per ASME Y14.5, perform tolerance stack-up analysis, and collaborate with QC teams on CMM measurement plans.",
+        "certifications_recognized_in_egypt": ["ASME GD&T Professional (Geometric Dimensioning and Tolerancing)", "Udemy GD&T Master Class"]
+      },
+      {
+        "rank": 5,
+        "skill": "Computational Fluid Dynamics (CFD) — ANSYS Fluent",
+        "tool_or_platform": "ANSYS Fluent 2024, OpenFOAM",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Egypt's HVAC industry (one of the largest in MENA due to climate) and wind energy sector (Gebel El Zeit wind farms) create high demand for CFD-capable engineers for duct design, heat exchanger optimization, and turbine aerodynamics.",
+        "learning_objective": "Ability to set up and solve a 3D turbulent flow simulation in ANSYS Fluent — including geometry cleanup, meshing strategy selection, turbulence model choice (k-ε, k-ω SST), boundary condition definition, and results post-processing.",
+        "certifications_recognized_in_egypt": ["ANSYS Fluent CFD Certificate (ANSYS Learning Hub)", "OpenFOAM Advanced Training (CFD Direct)"]
+      },
+      {
+        "rank": 6,
+        "skill": "Design for Manufacturing (DFM) & Sheet Metal Design",
+        "tool_or_platform": "SolidWorks Sheet Metal, Trumpf TruTops, Bend tables",
+        "weight_in_niche": 0.85,
+        "egyptian_market_relevance": "Egyptian sheet metal fabrication is a major industry (electrical cabinets, HVAC ducts, structural frames); DFM knowledge directly translates to cost reduction and is highly valued by Egyptian manufacturers.",
+        "learning_objective": "Ability to design sheet metal parts in SolidWorks with accurate bend allowances, apply DFM rules for punch press and laser cutting processes, generate flat patterns, and create tooling-ready cut-list BOMs.",
+        "certifications_recognized_in_egypt": ["SolidWorks Sheet Metal Design Associate (CSWA-SM)", "Fabrication Industry DFM Certificate (SME)"]
+      },
+      {
+        "rank": 7,
+        "skill": "Engineering Drawing & AutoCAD 2D",
+        "tool_or_platform": "AutoCAD 2024, Draftsight",
+        "weight_in_niche": 0.8,
+        "egyptian_market_relevance": "AutoCAD 2D remains the universal communication language between Egyptian mechanical engineers and fabrication workshops; a baseline skill expected even from fresh graduates.",
+        "learning_objective": "Ability to produce fully dimensioned, standards-compliant 2D engineering drawings in AutoCAD including multi-view projections, section views, thread callouts, welding symbols, and title block information.",
+        "certifications_recognized_in_egypt": ["Autodesk Certified Professional: AutoCAD (ACP)", "Autodesk Certified User: AutoCAD (ACU)"]
+      },
+      {
+        "rank": 8,
+        "skill": "Mechanism Design & Machine Elements",
+        "tool_or_platform": "SolidWorks Motion, MATLAB, Shigley's Machine Design methodology",
+        "weight_in_niche": 0.8,
+        "egyptian_market_relevance": "Egyptian heavy equipment maintenance companies and machinery manufacturers require engineers who can redesign or reverse-engineer mechanical power transmission systems — a highly practical skill in Egyptian industrial culture.",
+        "learning_objective": "Ability to design and select standard machine elements (spur/helical gears, bearings, shafts, keys, couplings) using fatigue safety factor methodology from Shigley, and validate kinematic behavior using SolidWorks Motion.",
+        "certifications_recognized_in_egypt": ["SolidWorks Simulation Specialist (CSWSA-SM)", "Machine Design Fundamentals (edX MIT)"]
+      },
+      {
+        "rank": 9,
+        "skill": "Additive Manufacturing & 3D Printing",
+        "tool_or_platform": "Ultimaker Cura, Bambu Studio, Formlabs PreForm, DfAM principles",
+        "weight_in_niche": 0.75,
+        "egyptian_market_relevance": "Rapid prototyping via FDM and SLA printing is widely adopted in Egyptian engineering startups, university labs, and manufacturing companies for tooling and jig production; a fast-growing differentiating skill.",
+        "learning_objective": "Ability to prepare and optimize a 3D model for FDM/SLA printing — including support structure strategy, infill selection for mechanical load, post-processing techniques, and redesign for additive manufacturing (DfAM) principles.",
+        "certifications_recognized_in_egypt": ["Ultimaker Essentials Certificate", "Additive Manufacturing Fundamentals Certificate (SME)"]
+      },
+      {
+        "rank": 10,
+        "skill": "Structural & Thermal Simulation — Material Selection",
+        "tool_or_platform": "CES EduPack / Granta Selector, ANSYS Material Designer",
+        "weight_in_niche": 0.7,
+        "egyptian_market_relevance": "Material selection is a critical — and often underdeveloped — skill in Egyptian engineering graduates; companies replacing imported components with locally-manufactured alternatives require engineers who can validate material substitutions.",
+        "learning_objective": "Ability to use Ashby material selection charts to identify candidate materials for a given performance index, validate the choice with FEA under operational thermal and structural loads, and document a material substitution justification report.",
+        "certifications_recognized_in_egypt": ["Granta Design CES EduPack Certified User", "ASM International Material Selection Training"]
+      }
+    ]
+  },
+
+  "Technical Management": {
+    "niche_description": "Lead engineering teams, manage product development lifecycles, and bridge technical execution with business strategy. Covers project managers, R&D team leads, systems engineers, and engineering directors in mechatronics-intensive industries.",
+    "ideal_match_score": 100,
+    "top_skills": [
+      {
+        "rank": 1,
+        "skill": "Systems Engineering & V-Model",
+        "tool_or_platform": "IBM DOORS Next, Polarion ALM, MBSE (SysML/Cameo)",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "Systems engineering methodology is explicitly required by Egyptian defense contractors (AOI, EAF Industrial), space agencies (NARSS), and multinational Tier-1 automotive companies; DOORS is the most-used requirements tool in Egyptian complex programs.",
+        "learning_objective": "Ability to decompose a system into requirements hierarchy (stakeholder → system → subsystem), manage requirements traceability in IBM DOORS, apply the V-model for verification and validation planning, and conduct Functional Hazard Assessments.",
+        "certifications_recognized_in_egypt": ["INCOSE Certified Systems Engineering Professional (CSEP)", "IBM Engineering Lifecycle Management (ELM) Foundations Badge"]
+      },
+      {
+        "rank": 2,
+        "skill": "Project Management — PMP / Agile Hybrid",
+        "tool_or_platform": "MS Project, Jira, Monday.com, PMI PMBOK 7th Edition",
+        "weight_in_niche": 1.0,
+        "egyptian_market_relevance": "PMP certification commands the highest salary premium of any management credential in Egypt's engineering market. Egyptian engineering PMOs in oil & gas (EGPC, ENI Egypt), power (EEHC), and construction demand PMP-certified project leads.",
+        "learning_objective": "Ability to build a project schedule using critical path method (CPM), manage scope, cost, and schedule baselines using earned value analysis (EVM), facilitate Agile sprint ceremonies, and produce executive-level status reports.",
+        "certifications_recognized_in_egypt": ["PMI Project Management Professional (PMP)", "PMI Agile Certified Practitioner (PMI-ACP)", "Scrum.org Professional Scrum Master (PSM I)"]
+      },
+      {
+        "rank": 3,
+        "skill": "FMEA & Risk Management",
+        "tool_or_platform": "AIAG-VDA FMEA Handbook, FMEA-MSR, ReliaSoft BlockSim",
+        "weight_in_niche": 0.95,
+        "egyptian_market_relevance": "FMEA is a mandatory deliverable for ISO/TS 16949 automotive suppliers in Egypt and is standard practice in Tier-1 aerospace/defense; Egyptian quality engineers with AIAG-VDA FMEA expertise are in short supply.",
+        "learning_objective": "Ability to conduct Design FMEA and Process FMEA using the AIAG-VDA 1st Edition format — defining failure modes, effects, causes, and controls; calculating Risk Priority Numbers (RPN) / Action Priority (AP); and driving corrective actions to closure.",
+        "certifications_recognized_in_egypt": ["ASQ Certified Quality Engineer (CQE)", "AIAG-VDA FMEA Implementation Training Certificate"]
+      },
+      {
+        "rank": 4,
+        "skill": "Root Cause Analysis & Problem-Solving Tools",
+        "tool_or_platform": "8D Report, 5 Whys, Fishbone (Ishikawa), TRIZ, Kepner-Tregoe",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "8D problem solving is mandated by multinational OEM customers of Egyptian automotive suppliers; Egyptian quality and engineering managers who master structured RCA earn faster promotions in manufacturing environments.",
+        "learning_objective": "Ability to lead a cross-functional team through a full 8D corrective action process: problem description (D1–D2), root cause verification using 5 Whys and Ishikawa diagrams (D4), implementation of permanent corrective actions (D5–D6), and recurrence prevention (D7).",
+        "certifications_recognized_in_egypt": ["Ford 8D Global Problem Solving Training", "ASQ Six Sigma Green Belt (CSSGB)"]
+      },
+      {
+        "rank": 5,
+        "skill": "Requirements Engineering — DOORS / Polarion",
+        "tool_or_platform": "IBM DOORS Next Generation, Siemens Polarion ALM",
+        "weight_in_niche": 0.9,
+        "egyptian_market_relevance": "Egyptian defense, aerospace, and automotive industries all require formal requirements management; IBM DOORS expertise is the most sought-after systems engineering tool skill in Egyptian defense-sector job postings.",
+        "learning_objective": "Ability to create a structured requirements database in IBM DOORS — with typed objects, traceability links between stakeholder/system/test requirements, views/modules for stakeholder reviews, and change impact analysis reports.",
+        "certifications_recognized_in_egypt": ["IBM ELM Engineering Requirements Management DOORS Next — Professional", "Polarion ALM Fundamentals (Siemens Training)"]
+      },
+      {
+        "rank": 6,
+        "skill": "Quality Management Systems — ISO 9001 / IATF 16949",
+        "tool_or_platform": "Minitab, Quality Center, APQP/PPAP documentation",
+        "weight_in_niche": 0.85,
+        "egyptian_market_relevance": "Egyptian factories serving European export markets (textiles, automotive, food) must maintain ISO 9001 or IATF 16949 certification; quality leads with audit experience are consistently among the top-paying roles in Egyptian manufacturing.",
+        "learning_objective": "Ability to implement an IATF 16949-compliant quality management system — including Control Plans, MSA studies, SPC monitoring with Minitab, conducting internal audits, and managing PPAP submissions to customer quality teams.",
+        "certifications_recognized_in_egypt": ["ASQ Certified Quality Auditor (CQA)", "IATF 16949 Lead Auditor (IRCA-Certified)"]
+      },
+      {
+        "rank": 7,
+        "skill": "Technical Leadership & Engineering Team Management",
+        "tool_or_platform": "OKR frameworks, 1-on-1 coaching, Jira/Confluence for team tracking",
+        "weight_in_niche": 0.85,
+        "egyptian_market_relevance": "Egyptian engineering companies face a persistent middle-management gap; engineers who can combine technical credibility with team leadership (OKRs, mentoring, performance reviews) are rapidly promoted and highly compensated.",
+        "learning_objective": "Ability to set OKRs for an engineering team, run effective weekly syncs and sprint reviews, conduct structured technical performance reviews using the SBI (Situation-Behavior-Impact) model, and develop individual learning plans for team members.",
+        "certifications_recognized_in_egypt": ["CCL Leadership Essentials Certificate", "Coursera Engineering Management Specialization (ASU)"]
+      },
+      {
+        "rank": 8,
+        "skill": "Cost Estimation & Engineering Economics",
+        "tool_or_platform": "MS Excel (advanced), Oracle Primavera, SAP PM",
+        "weight_in_niche": 0.8,
+        "egyptian_market_relevance": "Egyptian engineering project leads are expected to produce detailed cost breakdowns; Excel-based cost models and Primavera scheduling are the two tools tested in Egyptian EPC company engineering manager interviews.",
+        "learning_objective": "Ability to build a bottom-up cost estimate for an engineering project using work package breakdown, perform net present value (NPV) and internal rate of return (IRR) analysis for capital investment decisions, and track actuals vs. budget using Earned Value Management.",
+        "certifications_recognized_in_egypt": ["PMI Project Cost Management Certificate", "Oracle Primavera P6 Professional Certification (Primavera Training Center Egypt)"]
+      },
+      {
+        "rank": 9,
+        "skill": "Technical Documentation & Specification Writing",
+        "tool_or_platform": "Confluence, SharePoint, LaTeX (for formal reports), DOORS",
+        "weight_in_niche": 0.75,
+        "egyptian_market_relevance": "The ability to produce clear, traceable technical documentation (SRS, ICD, test protocols) is a consistently cited skill gap in Egyptian engineering graduates entering defense and multinational companies.",
+        "learning_objective": "Ability to author a complete System Requirements Specification (SRS) conforming to IEEE 830 or an Interface Control Document (ICD) with precise, unambiguous, testable requirements — including rationale, validation criteria, and traceability matrices.",
+        "certifications_recognized_in_egypt": ["IEEE Technical Writing for Engineers Certificate", "Coursera Technical Writing Specialization (UC Irvine)"]
+      },
+      {
+        "rank": 10,
+        "skill": "Advanced Product Quality Planning (APQP) & PPAP",
+        "tool_or_platform": "AIAG APQP Manual, PPAP 4th Edition, Control Plan templates",
+        "weight_in_niche": 0.7,
+        "egyptian_market_relevance": "Egyptian automotive component manufacturers supplying to Stellantis (formerly Fiat Egypt) and other OEMs must submit PPAP packages; engineers who can lead APQP programs are scarce in Egypt and command a strong premium.",
+        "learning_objective": "Ability to manage a full APQP program from concept through PPAP submission — including Design FMEA, Process FMEA, Control Plan, Measurement System Analysis (MSA), Initial Process Studies (Cpk), and a complete Level 3 PPAP submission package.",
+        "certifications_recognized_in_egypt": ["AIAG APQP/PPAP Implementation Training Certificate", "ASQ Certified Quality Process Analyst (CQPA)"]
+      }
+    ]
+  }
+}

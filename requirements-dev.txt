@@ -1,0 +1,13 @@
+# ─────────────────────────────────────────────
+# Development-only dependencies — testing tools
+# ─────────────────────────────────────────────
+
+# Pull in everything the app itself needs first
+-r requirements.txt
+
+# pytest is our test runner
+pytest>=7.0
+
+# pytest-cov tracks which lines of src/ are actually exercised by the tests.
+# It prints a "coverage report" so we can spot untested paths.
+pytest-cov>=4.0
