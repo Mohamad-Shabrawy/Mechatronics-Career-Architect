@@ -8,9 +8,142 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/static/css/style.css?v=11">
+  <link rel="stylesheet" href="/static/css/intro.css">
+  <link rel="stylesheet" href="/static/css/style.css?v=12">
+  <script src="/static/js/intro.js" defer></script>
 </head>
 <body>
+
+  <!-- ── Cinematic intro overlay — shown once per session, removed by intro.js ── -->
+  <div class="intro-root" id="mca-intro" aria-hidden="true">
+    <div class="intro-grid"></div>
+    <div class="intro-scan"></div>
+    <div class="intro-horizon"></div>
+    <div class="intro-orbit">
+      <svg viewBox="0 0 880 880" fill="none">
+        <g class="ring-rot">
+          <circle cx="440" cy="440" r="420" stroke="#6ee7ff" stroke-opacity=".25" stroke-width="1"/>
+          <circle cx="440" cy="440" r="320" stroke="#6ee7ff" stroke-opacity=".12" stroke-width="1" stroke-dasharray="2 8"/>
+          <circle cx="440" cy="440" r="220" stroke="#6ee7ff" stroke-opacity=".08" stroke-width="1"/>
+          <path d="M 440 20 A 420 420 0 0 1 850 440" stroke="#6ee7ff" stroke-opacity=".75" stroke-width="2"/>
+          <path d="M 440 860 A 420 420 0 0 1 30 440"  stroke="#6ee7ff" stroke-opacity=".55" stroke-width="2"/>
+          <circle cx="440" cy="20"  r="4" fill="#fff"/>
+          <circle cx="850" cy="440" r="3" fill="#6ee7ff"/>
+          <circle cx="440" cy="860" r="3" fill="#6ee7ff" opacity=".6"/>
+          <circle cx="30"  cy="440" r="3" fill="#6ee7ff" opacity=".6"/>
+        </g>
+        <line x1="440" y1="430" x2="440" y2="450" stroke="#6ee7ff" stroke-opacity=".5"/>
+        <line x1="430" y1="440" x2="450" y2="440" stroke="#6ee7ff" stroke-opacity=".5"/>
+      </svg>
+    </div>
+    <div class="intro-particles" id="mca-intro-particles"></div>
+    <div class="intro-scanlines"></div>
+    <div class="intro-stage">
+      <div class="intro-frame">
+        <span class="intro-corner tl"></span><span class="intro-corner tr"></span>
+        <span class="intro-corner bl"></span><span class="intro-corner br"></span>
+        <div class="intro-ident">Career Intelligence</div>
+        <div class="intro-wordmark" id="mca-intro-wordmark" aria-label="Mechatronics Career Architect">
+          <div class="line l1"><span class="word" data-word="MECHATRONICS"></span></div>
+          <div class="line l2">
+            <span class="word" data-word="Career"></span>
+            <span class="gap"></span>
+            <span class="word" data-word="Architect"></span>
+          </div>
+        </div>
+        <div class="intro-underline"></div>
+        <div class="intro-subtitle">
+          AI <span class="accent">Career Intelligence</span> for Engineers
+        </div>
+      </div>
+    </div>
+    <div class="intro-boot">
+      <div class="intro-boot__row">
+        <span class="label">Initialising</span>
+        <span class="pct"></span>
+      </div>
+      <div class="intro-track"><div class="intro-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- ── Landing page — revealed after intro, leads to the app ── -->
+  <section id="landing-page" aria-labelledby="lp-heading">
+
+    <nav class="lp-nav">
+      <div class="lp-brand">
+        <span class="lp-brand__mark" aria-hidden="true"></span>
+        <span>Mechatronics Career Architect</span>
+      </div>
+      <div class="lp-nav__status">
+        <span class="lp-status-dot" aria-hidden="true"></span>
+        <span>Online · v6.0</span>
+        <button class="lp-replay" id="landing-replay" type="button">↻ Replay Intro</button>
+      </div>
+    </nav>
+
+    <div class="lp-hero">
+      <div class="lp-hero__left">
+        <div class="lp-eyebrow lp-reveal lp-r1" aria-hidden="true">AI Career Intelligence for Engineers</div>
+        <h1 id="lp-heading" class="lp-h1 lp-reveal lp-r2">Find your<br>engineering <em>niche.</em></h1>
+        <p class="lp-p lp-reveal lp-r3">
+          Upload your CV and the Mechatronics Career Architect analyses your skills
+          across six specialised tracks — Industrial Automation, Robotics, Embedded
+          Systems, Automotive, Mechanical Design, and Technical Management — and returns
+          a ranked match, a skills-gap breakdown, a proficiency radar, and a
+          personalised career roadmap PDF.
+        </p>
+        <div class="lp-cta-wrap lp-reveal lp-r4">
+          <button class="lp-btn" id="landing-cta" type="button">
+            Upload CV · Run Analysis
+            <span class="lp-btn__arrow" aria-hidden="true">→</span>
+          </button>
+        </div>
+      </div>
+
+      <aside class="lp-panel lp-reveal lp-r5" aria-label="Sample diagnostic preview">
+        <div class="lp-panel__head">
+          <span><span class="lp-panel__id">DGN-001</span> · Sample Diagnostic</span>
+          <span>TOP 3 MATCH</span>
+        </div>
+        <h2 class="lp-panel__title">Top Niche Recommendations</h2>
+        <p class="lp-panel__sub">A sample CV ranked across all six tracks — preview your top 3 matches.</p>
+        <div class="lp-niches">
+          <div class="lp-niche lp-niche--top">
+            <span class="lp-niche__num">01</span>
+            <div class="lp-niche__row">
+              <span class="lp-niche__name">Robotics</span>
+              <span class="lp-niche__meter"><i class="lp-niche__bar" style="--w:92%"></i></span>
+            </div>
+            <span class="lp-niche__pct">92%</span>
+          </div>
+          <div class="lp-niche">
+            <span class="lp-niche__num">02</span>
+            <div class="lp-niche__row">
+              <span class="lp-niche__name">Embedded Systems</span>
+              <span class="lp-niche__meter"><i class="lp-niche__bar" style="--w:78%"></i></span>
+            </div>
+            <span class="lp-niche__pct">78%</span>
+          </div>
+          <div class="lp-niche">
+            <span class="lp-niche__num">03</span>
+            <div class="lp-niche__row">
+              <span class="lp-niche__name">Industrial Automation</span>
+              <span class="lp-niche__meter"><i class="lp-niche__bar" style="--w:64%"></i></span>
+            </div>
+            <span class="lp-niche__pct">64%</span>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <footer class="lp-footer">
+      <span>© 2026 Mechatronics Career Architect</span>
+      <div class="lp-footer__right">
+        <span>v6.0</span><span>Build 8.04</span><span>Engineered for Engineers</span>
+      </div>
+    </footer>
+
+  </section>
 
   <!-- Ambient gradient orbs — never above z-index 0 -->
   <div class="bg-ambient" aria-hidden="true">
@@ -21,7 +154,7 @@
   </div>
 
   <!-- ── Upload Form Page ──────────────────────────────────────────── -->
-  <main id="form-page" class="page-section" aria-labelledby="form-heading">
+  <main id="form-page" class="page-section" hidden aria-labelledby="form-heading">
     <div class="form-layout">
 
       <!-- Left: Branding / Hero -->
