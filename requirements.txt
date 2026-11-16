@@ -12,9 +12,6 @@ pymupdf>=1.23.0
 # scikit-learn provides the RandomForestClassifier and evaluation metrics.
 scikit-learn>=1.4
 
-# pandas loads the labeled training dataset CSV and JSON files.
-pandas>=2.0
-
 # numpy is required by scikit-learn and for feature vector array operations.
 numpy>=1.24
 

@@ -5,6 +5,12 @@
 # Pull in everything the app itself needs first
 -r requirements.txt
 
+# pandas is only used by src/dataset.py (training-data loading), which the
+# trainer and the test suite import — the deployed web app never touches it.
+# Keeping it out of requirements.txt makes the production install lighter,
+# which matters on small cloud instances like Render's free tier.
+pandas>=2.0
+
 # pytest is our test runner
 pytest>=7.0
 

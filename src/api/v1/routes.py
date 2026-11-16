@@ -6,7 +6,7 @@ Defines POST /api/v1/analyze and GET /api/v1/health.
 The analyze endpoint:
   1. Validates the uploaded PDF (size, type)
   2. Serialises the five preference sliders from the form
-  3. Runs the full Phase 1–5 pipeline inside a 30-second timeout
+  3. Runs the full Phase 1–5 pipeline inside a 180-second timeout
   4. Returns a JSON ResultsView to the client
 
 All pipeline calls live in run_pipeline() so they can be unit-tested
@@ -257,19 +257,27 @@ def invoke_with_timeout(
     artifact : dict or None
         Loaded model artifact.
     timeout : int
-        Maximum seconds to wait (default 30).
+        Maximum seconds to wait (default 180).
 
     Raises
     ------
     TimeoutError
         When the pipeline exceeds `timeout` seconds.
     """
-    with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
-        future = executor.submit(run_pipeline, cv_bytes, user_preferences, artifact)
-        try:
-            return future.result(timeout=timeout)
-        except concurrent.futures.TimeoutError:
-            raise TimeoutError("Analysis is taking too long — please try again")
+    # Deliberately NOT a `with` block: ThreadPoolExecutor.__exit__ calls
+    # shutdown(wait=True), which would block the request until the stuck
+    # pipeline thread actually finishes — defeating the whole point of the
+    # timeout. We shut down without waiting so the 408 reaches the client
+    # at `timeout` seconds; the abandoned thread finishes in the background.
+    executor = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+    future = executor.submit(run_pipeline, cv_bytes, user_preferences, artifact)
+    try:
+        result = future.result(timeout=timeout)
+    except concurrent.futures.TimeoutError:
+        executor.shutdown(wait=False, cancel_futures=True)
+        raise TimeoutError("Analysis is taking too long — please try again")
+    executor.shutdown(wait=False)
+    return result
 
 
 # ── Route handlers ────────────────────────────────────────────────────────────
