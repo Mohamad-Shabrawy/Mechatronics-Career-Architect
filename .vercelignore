@@ -1,0 +1,30 @@
+# Everything listed here is excluded from the Vercel deployment bundle.
+# Python serverless functions have a 500 MB unpacked size cap, and the ML
+# dependencies (scikit-learn, matplotlib, PyMuPDF) eat most of it — so we
+# ship only what the running app actually needs.
+
+# Tests and dev tooling — never executed in production
+tests/
+pytest.ini
+requirements-dev.txt
+.pytest_cache/
+.coverage
+
+# Training data and experiment output — only the trained .joblib matters
+data/training/
+experiments/
+
+# Design prototypes and internal docs
+design-system/
+Cosmic scale animation (1)/
+*.md
+
+# Runtime logs — the serverless filesystem is read-only anyway
+logs/
+
+# Other platforms' deploy config
+render.yaml
+runtime.txt
+
+# Claude Code internals
+.claude/
