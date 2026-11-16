@@ -42,3 +42,5 @@ Cosmic scale animation (1)/
 # Stale model artifacts — only the latest is needed
 models/20260418_005030_seed42.joblib
 models/20260423_133324_seed42.joblib
+
+.vercel
